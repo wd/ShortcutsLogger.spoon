@@ -1,0 +1,95 @@
+#+TITLE: Readme
+
+This spoon can log all the shortcuts you have pressed.
+
+** Install
+
+#+begin_src shell
+cd ~/.hammerspoon/Spoons/
+git clone https://github.com/wd/ShortcutsLogger.spoon
+#+end_src
+
+** Usage
+
+Put the codes below to your =.hammerspoon/init.lua=
+
+#+begin_src lua
+local sLogger = hs.loadSpoon("ShortcutsLogger")
+sLogger.start()
+hs.hotkey.bind({"cmd", "ctrl"}, "k", "Show statics in console", sLogger.showShortCuts)
+#+end_src
+
+You can press =Cmd+Ctrl+k= at anytime, it will print current logs in the hammerspoon console. Please note that the statics will be reset every time you reload hammerspoon.
+
+#+begin_src text
+ShortcutsLogger: statics>>
+
+total ->
+  cmd+c => 28
+  ctrl+b => 22
+  ctrl+f => 15
+  cmd+ctrl+j => 14
+  ctrl+l => 12
+  ctrl+e => 6
+  alt+delete => 6
+  ctrl+k => 6
+  alt+v => 5
+  ctrl+n => 5
+  ctrl+c => 4
+  cmd+ctrl+p => 4
+  cmd+v => 4
+  ctrl+a => 3
+  cmd+j => 3
+  cmd+ctrl+k => 3
+  cmd+t => 3
+  ctrl+h => 3
+  cmd+ctrl+n => 3
+  cmd+shift+ctrl+4 => 2
+  cmd+x => 2
+  cmd+w => 1
+  ctrl+r => 1
+  cmd+space => 1
+  cmd+ctrl+l => 1
+  ctrl+space => 1
+  cmd+n => 1
+
+com.Snipaste ->
+  ctrl+e => 1
+com.google.Chrome ->
+  cmd+c => 28
+  ctrl+f => 6
+  ctrl+k => 6
+  cmd+v => 4
+  ctrl+b => 3
+  cmd+t => 3
+  ctrl+a => 3
+  cmd+x => 2
+  ctrl+e => 2
+  cmd+shift+ctrl+4 => 1
+  cmd+w => 1
+net.kovidgoyal.kitty ->
+  alt+delete => 6
+  alt+v => 5
+  cmd+ctrl+p => 4
+  ctrl+b => 4
+  ctrl+e => 3
+  cmd+ctrl+n => 3
+  cmd+space => 1
+  ctrl+l => 1
+  cmd+n => 1
+  cmd+shift+ctrl+4 => 1
+  ctrl+f => 1
+  ctrl+space => 1
+  cmd+ctrl+l => 1
+org.gnu.Emacs ->
+  ctrl+b => 15
+  cmd+ctrl+j => 14
+  ctrl+l => 11
+  ctrl+f => 8
+  ctrl+n => 5
+  ctrl+c => 4
+  cmd+ctrl+k => 3
+  ctrl+h => 3
+  cmd+j => 3
+  ctrl+r => 1
+#+end_src
